@@ -116,7 +116,7 @@ exports.getTourStats = async (req, res) => {
           _id: '$difficulty', // we can use _id: '$difficulty' and it will give the below stats for all difficulties i.e easy, medium, hard, 
           // setting it to null won't group it
           numTours: {$sum: 1}, // on each iteration, 1 is going to be added to the sum which will give total tours
-          numRatings: {$sum: '$ratingsQuantity'},
+          numRatings: {$sum: '$ratingsQuantity'}, // variableNameToDisplay: {$operator: '$dbDocFieldName'}
           avgRating: { $avg: '$ratingsAverage' },
           avgPrice: { $avg: '$price' },
           minPrice: {$min: '$price'},

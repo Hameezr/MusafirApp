@@ -40,6 +40,5 @@ app.all('*', (req, res, next)=> { // app.all is used for all app.get/post/delete
 
 // ERROR HANDLING MIDDLEWARE 
 app.use(globalErrorHandler)
-// test
 
-module.exports = app;
+module.exports = app; 

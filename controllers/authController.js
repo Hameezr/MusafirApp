@@ -10,10 +10,13 @@ exports.signup = async (req, res, next) => {
             passwordConfirm: req.body.passwordConfirm,
         })
 
-        const token = jwt.sign({id: newUser._id}, 'secret')
+        const token = jwt.sign({id: newUser._id}, process.env.JWT_SECRET, {
+            expiresIn: process.env.JWT_EXPIRES_IN
+        })
 
         res.status(201).json({
             status: 'success',
+            token,
             data: {
                 user: newUser
             }

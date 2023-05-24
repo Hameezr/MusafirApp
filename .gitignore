@@ -7,3 +7,4 @@ node_modules/
 # Ignore IDE and editor-specific files
 .idea/
 .vscode/
+config.env
